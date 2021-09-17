@@ -28,10 +28,8 @@ print("\n TEST 1: Verifcation Check\n")
 request=driver.find_element_by_xpath('//button[@class="btn btn-primary"]').click()
 time.sleep(1)
 verify_check=driver.find_element_by_xpath('//pre[@id="interactive_output"]').text
-if "404" in verify_check:
-    print("404 ERROR")
-else:
-    print("\n[++] Succesful Response\n")
+assert  "404" in verify_check,"\n[++] Succesful Response\n"
+print("404 ERROR")
 
 time.sleep(1)
 
@@ -69,15 +67,12 @@ for person in name:
     if person in names:
         chk+=1
 
-if chk==10:
-    print(" All Same Users")
-else:
-    print("different users")
+assert chk==10,("different users")
+print(" All Same Users")
 
 
 print("\n TEST 3: 82 count\n")
 
-if count==82:
-    print("total 82 users")
-else:
-    print("more users")
+assert count==82,("more users")
+print("total 82 users")
+
